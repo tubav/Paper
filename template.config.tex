@@ -1,0 +1,90 @@
+% bugfixes ---------------------------------------------------------------------
+\let\accentvec\vec               % llncs with amsmath bugfix
+% ------------------------------------------------------------------------------
+
+
+% docuemnt class ---------------------------------------------------------------
+%\documentclass[runningheads]{llncs}
+%\documentclass[conference]{IEEEtran}
+\documentclass[
+        a4paper,                % use a5paper for ISO A5; use a4paper for ISO A4
+        pdftex,                 % PDF output
+        10pt,                   % font size
+        conference,             % IEEE requirement
+        romanappendices        % IEEE requirement
+]{IEEEtran}
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+
+
+% bugfixes ---------------------------------------------------------------------
+\let\spvec\vec                   % llncs with amsmath bugfix
+\let\vec\accentvec               % llncs with amsmath bugfix
+% ------------------------------------------------------------------------------
+
+
+% basic config -----------------------------------------------------------------
+\input{lib/resources/config/default}
+\usepackage{cite}                % Cite references
+\usepackage[nolist]{acronym}     % For acronyms
+% ------------------------------------------------------------------------------
+
+
+% meta data --------------------------------------------------------------------
+\newcommand{\metaTitle}{A Nice Descriptive Title without Abbreviations}
+\newcommand{\metaTitleShort}{Nice Short Title}
+\newcommand{\metaConference}{Conference Name}
+\newcommand{\metaConferenceArea}{Conference Area}
+\newcommand{\metaKeywords}{some, keywords}
+\newcommand{\metaAuthorMail}{todo@example.org}
+
+\newcommand{\metaAuthorShort}{%
+X. Todo, %
+Y. Todo
+}
+
+\newcommand{\metaAuthorWithInst}{%
+XXX Todo\inst{1} \and %
+YYY Todo\inst{1}%
+}
+
+
+%----- Alternative format for too wide organisations text -----------
+%\newcommand{\metaAuthor}{\IEEEauthorblockN{%
+%XXX Todo\IEEEauthorrefmark{1},%
+%YYY Todo\IEEEauthorrefmark{2}%
+%}}
+
+% ---- Authors IEEE style ------------------------------
+%------------ Alex-----------------------
+\newcommand{\authorOne}{\IEEEauthorblockN{X. Todo}
+\metaInstituteFirst}
+
+%----------- X Todo ------------------
+\newcommand{\authorTwo}{\IEEEauthorblockN{Y. Todo}
+\metaInstituteSecond}
+
+% -------- Institutions/Organisations -------------------------
+%--------- Uni Bonn ----------------------------
+\newcommand{\metaInstituteFirst}{\IEEEauthorblockA{University X,
+City, Country\\ Department\\
+todo@example.org}}
+
+%------------ X Todo -----------------------
+\newcommand{\metaInstituteSecond}{\IEEEauthorblockA{University Y,
+City, Country\\ Department\\
+todo@example.org}}
+
+\newcommand{\metaSubject}{\metaConference~-~\metaConferenceArea} 
+
+\newcommand{\metaThanks}{Research for this paper %
+was partially financed by the XXX project %
+XXX\cite{rfc748}. We thank our project partners for their %
+contributions and their collaboration to this research work.}
+% ------------------------------------------------------------------------------
+
+
+% pdf meta data ----------------------------------------------------------------
+\input{lib/resources/config/pdfmetadata}
+% ------------------------------------------------------------------------------

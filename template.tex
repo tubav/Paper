@@ -1,0 +1,55 @@
+% /* include config --------------------------------------------------------- */
+\input{template.config.tex}
+% /* ------------------------------------------------------------------------ */
+
+% /* begin paper ------------------------------------------------------------ */
+\begin{document}
+    % /* abbreviations ------------------------------------------------------ */
+    \begin{acronym}
+        \input{template.acro}
+    \end{acronym}
+    % /* -------------------------------------------------------------------- */
+
+    % /* Meta data ---------------------------------------------------------- */
+    %\frontmatter
+    \title{\metaTitle}
+    %\titlerunning{\metaTitleShort}
+    \author{\authorOne \and \authorTwo}
+    %\metaAuthorWithInst}
+    %\authorrunning{\metaAuthorShort}
+    %\institute{\metaInstituteFirst \and \metaInstituteSecond}
+    %\toctitle{\metaTitle}
+    %\tocauthor{\metaAuthorShort}
+    \maketitle
+    % /* -------------------------------------------------------------------- */
+    
+    % /* -------------------------------------------------------------------- */
+    \begin{abstract}
+    \input{src/abstract}
+    \end{abstract}
+
+    \begin{IEEEkeywords}\metaKeywords\end{IEEEkeywords}
+    % /* -------------------------------------------------------------------- */
+    
+    % /* -------------------------------------------------------------------- */
+    %\mainmatter
+    \input{src/introduction}
+    \input{src/relatedwork}
+    \input{src/assumptions}
+    \input{src/analyze}
+    \input{src/evaluation}
+    \input{src/discussion}
+    \input{src/conclusions}
+    \input{src/acknowledgements}
+    \bibliographystyle{IEEEtran}
+    \bibliography{template}
+    % to show unreferenced publications ------------------------------------- */
+    %\bibliographystyle{unsrt}
+    %\cite{dummy}
+    %\nocite{*}
+    %------------------------------------------------------------------------ */
+
+    % /* -------------------------------------------------------------------- */
+    %\backmatter
+\end{document}
+% /* ------------------------------------------------------------------------ */
