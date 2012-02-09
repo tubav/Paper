@@ -11,6 +11,25 @@ tipps, and checklist on the Internet.
 This project aims to provide a template that includes the above mentioned
 instructions and is basically following the article [Tipps zum Schreiben von Konferenzpapieren](http://sdqweb.ipd.kit.edu/wiki/Tipps_zum_Schreiben_von_Konferenzpapieren).
 
+Main Features
+-------------
+
+* PDF support: hyperlinks, ToC, annotations, meta-data
+* Language support: UTF8 encoding, support for CJK and German
+* Integration: buildbot test script, TeXlipse project file, graphviz, gnuplot, R
+* Build file: clean, compile, image generation, validation
+* Validation: orthography (incl. project dictionary), hyphens, commas, references, todos, best practices, l2tabu, latex/bibtex warnings
+* Media: examples for images, multiple images, equations, tables, algorithms
+* Bibliography: multiple files, link to the source page, show unreferenced items
+* Other: side notes, line numbering
+
+Getting Started
+---------------
+
+* git clone --recursive git://github.com/Thesis/Paper.git
+* cd Paper
+* make build
+
 Ticket system
 -------------
 Have a look at http://githubthesis.lighthouseapp.com/tickets and
