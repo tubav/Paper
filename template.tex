@@ -1,12 +1,13 @@
 % /* include config --------------------------------------------------------- */
-\input{template.config.tex}
+\newcommand{\metaFilename}{template}
+\input{\metaFilename.config.tex}
 % /* ------------------------------------------------------------------------ */
 
 % /* begin paper ------------------------------------------------------------ */
 \begin{document}
     % /* abbreviations ------------------------------------------------------ */
     \begin{acronym}
-        \input{template.acro.tex}
+        \input{\metaFilename.acro.tex}
     \end{acronym}
     % /* -------------------------------------------------------------------- */
 
@@ -42,7 +43,7 @@
     \input{src/conclusions}
     \input{src/acknowledgements}
     \bibliographystyle{IEEEtran}
-    \bibliography{template}
+    \bibliography{\metaFilename}
     % to show unreferenced publications ------------------------------------- */
     %\bibliographystyle{unsrt}
     %\cite{dummy}
