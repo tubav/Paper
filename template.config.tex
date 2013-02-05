@@ -10,9 +10,11 @@
         a4paper,                % use a5paper for ISO A5; use a4paper for ISO A4
         pdftex,                 % PDF output
         10pt,                   % font size
-        conference,             % IEEE requirement
-        romanappendices        % IEEE requirement
-]{IEEEtran}
+        %conference,             % IEEE requirement
+        %romanappendices,        % IEEE requirement
+        runningheads,           % LLCNS
+%]{IEEEtran}
+]{llncs}
 % ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------
@@ -37,34 +39,43 @@
 \newcommand{\metaConference}{Conference Name}
 \newcommand{\metaConferenceArea}{Conference Area}
 \newcommand{\metaKeywords}{some, keywords}
-\newcommand{\metaAuthorMail}{todo@example.org}
+% ------------------------------------------------------------------------------
 
-\newcommand{\metaAuthorShort}{%
-X. Todo, %
-Y. Todo
+% authors ----------------------------------------------------------------------
+\newcommand{\metaAuthorYYY}{F. Last}
+\newcommand{\metaMailYYY}{first.last@example.com}
+\newcommand{\metaInstYYY}{University, City, Country,\\Department}
+
+\newcommand{\metaAuthorXXX}{T. Do}
+\newcommand{\metaMailXXX}{first.last@example.org}
+\newcommand{\metaInstXXX}{University, City, Country,\\Department of XXX}
+% ------------------------------------------------------------------------------
+
+% author PDF -------------------------------------------------------------------
+\newcommand{\metaAuthorMail}{\metaMailYYY}
+\newcommand{\metaAuthorShort}{\metaAuthorYYY}
+% ------------------------------------------------------------------------------
+
+% author IEEE ------------------------------------------------------------------
+%\newcommand{\IEEEinstYYY}{\IEEEauthorblockA{\metaInstYYY}}
+%\newcommand{\IEEEauthorYYY}{\IEEEauthorblockN{\metaAuthorYYY}\IEEEinstYYY}
+%\newcommand{\IEEEinstXXX}{\IEEEauthorblockA{\metaInstXXX}}
+%\newcommand{\IEEEauthorXXX}{\IEEEauthorblockN{\metaAuthorXXX}\metaInstXXX}
+%\author{\IEEEauthorYYY \and \IEEEauthorXXX}
+% ------------------------------------------------------------------------------
+
+% author LLNCS -----------------------------------------------------------------
+\author{\metaAuthorYYY\inst{1} \and \metaAuthorXXX \inst{2}}
+\authorrunning{\metaAuthorYYY et al.}
+\tocauthor{\metaAuthorYYY, \metaAuthorXXX}
+\institute{\metaInstYYY\\
+\email{\metaMailYYY}
+\and
+\metaInstXXX\\
+\email{\metaMailXXX}
 }
-
-\newcommand{\metaAuthorWithInst}{%
-XXX Todo\inst{1} \and %
-YYY Todo\inst{1}%
-}
-
-
-%----- Alternative format for too wide organisations text -----------
-%\newcommand{\metaAuthor}{\IEEEauthorblockN{%
-%XXX Todo\IEEEauthorrefmark{1},%
-%YYY Todo\IEEEauthorrefmark{2}%
-%}}
-
-% ---- Authors IEEE style ------------------------------
-%------------ Alex-----------------------
-\newcommand{\authorA}{\IEEEauthorblockN{X. Todo}\metaInstituteA}
-\newcommand{\metaInstituteA}{\IEEEauthorblockA{University X,
-City, Country\\ Department\\todo@example.org}}
-
-\newcommand{\authorB}{\IEEEauthorblockN{Y. Todo}\metaInstituteB}
-\newcommand{\metaInstituteB}{\IEEEauthorblockA{University Y,
-City, Country\\ Department\\todo@example.org}}
+\titlerunning{\metaTitleShort}
+% ------------------------------------------------------------------------------
 
 \newcommand{\metaSubject}{\metaConference~-~\metaConferenceArea} 
 
