@@ -1,0 +1,20 @@
+@startuml
+
+skinparam monochrome true
+skinparam shadowing false
+
+[*] --> active : create
+active --> [*] : release
+active -> configured : configure
+
+configured -> configured : configure
+configured --> [*] : release
+
+active -> subscribed : request
+active --> active : inform/configure
+
+subscribed --> [*] : release
+subscribed --> subscribed : inform/configure
+
+@enduml
+
