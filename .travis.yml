@@ -3,6 +3,8 @@ install:
   - sudo apt-get install texlive-fonts-extra ttf-inconsolata ttf-droid
   - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra
   - sudo apt-get install aspell gnuplot r-base
+  - wget http://yar.fruct.org/attachments/download/362/plantuml_7707-1_all.deb
+  - sudo dpkg -i plantuml_7707-1_all.deb 
 
 script:
   - make build
