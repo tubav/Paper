@@ -4,7 +4,7 @@ install:
   - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra
 
 script:
-  - source ./build.sh -b
+  - make build
 
 notifications:
   - email: false
