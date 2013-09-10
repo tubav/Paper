@@ -7,7 +7,10 @@ install:
   - sudo dpkg -i plantuml_7707-1_all.deb 
 
 script:
-  - make build
+  - make generate
+  - pdflatex template
+  - bibtex template
+  - pdflatex template
 
 notifications:
   - email: false
