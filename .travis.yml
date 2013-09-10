@@ -11,7 +11,9 @@ script:
   - pdflatex template
   - bibtex template
   - pdflatex template
+  - make build
+  - cat build.sh.log
 
 notifications:
-  - email: false
+  - email: alex@willner.ws
 
