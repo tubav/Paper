@@ -11,5 +11,5 @@ script:
   - cat build.sh.log
 
 notifications:
-  - email: alex@willner.ws
-
+  email:
+    - alex@willner.ws
