@@ -26,9 +26,23 @@ Main Features
 Getting Started
 ---------------
 
-* git clone --recursive git://github.com/Thesis/Paper.git
-* cd Paper
-* make build
+* Setup your system (tested on Ubuntu 13.10)
+```
+sudo apt-get -y install git ttf-sil-gentium ttf-sil-gentium-basic texlive-fonts-extra ttf-inconsolata texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-humanities texlive-science aspell gnuplot r-base graphviz
+sudo add-apt-repository -y ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get -y install oracle-java7-installer
+wget http://yar.fruct.org/attachments/download/362/plantuml_7707-1_all.deb
+sudo dpkg -i plantuml_7707-1_all.deb
+```
+
+* Work with the paper
+```
+git clone --recursive git://github.com/Thesis/Paper.git
+cd Paper
+make clean full
+```
+
 
 Ticket system
 -------------
