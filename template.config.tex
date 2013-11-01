@@ -33,59 +33,36 @@
 % ------------------------------------------------------------------------------
 
 
+% hyperlinks (last package) ----------------------------------------------------
+\usepackage[pdftex,                   % Hyperlinks in PDFs
+raiselinks=true,			          % calculate real height of the link
+breaklinks,                           % break links
+%backref=page,                         % backlinks in bibliography (section, slide, page, none)
+%pagebackref=true,                     % backlinks in bibliography
+hyperindex=true,                      % backlinkex index
+linktocpage=true,                     % ToC links pages
+bookmarks=true,                       % Bookmarks for PDF viewers
+bookmarksopen=true,                   % Open bookmarks
+bookmarksopenlevel=1,                 % How many levels to open
+bookmarksnumbered=true,               % Numbers in the bookmarks
+bookmarkstype=toc,                    % Type of bookmark
+plainpages=false,                     % Anchors even on plain pages?
+pageanchor=true,                      % Pages are linkable
+pdfstartview=FitH,                    % Open document with Fit Width
+pdfpagelabels=true,                   % set PDF page labels
+pdfpagemode=UseOutlines,              % Show bookmarks in viewer
+colorlinks,                           % Show colored links
+linkcolor=LinkColor,                  % Link color
+urlcolor=LinkColor,                   % URL color
+anchorcolor=LinkColor,                % Anchor color
+citecolor=LinkColor,                  % Cite color
+menucolor=LinkColor,                  % Menu color
+hypertexnames=true                    % Whatever ;)
+]{hyperref}                           % Use hyperlinks
+%\renewcommand*{\backref}[1]{[cited at page #1]} % Show formatted backlinks
+% ------------------------------------------------------------------------------
+
 % meta data --------------------------------------------------------------------
-\newcommand{\metaTitle}{A Nice Descriptive Title without Abbreviations}
-\newcommand{\metaTitleShort}{Nice Short Title}
-\newcommand{\metaConference}{Conference Name}
-\newcommand{\metaConferenceArea}{Conference Area}
-\newcommand{\metaKeywords}{some, keywords}
-% ------------------------------------------------------------------------------
-
-% authors ----------------------------------------------------------------------
-\newcommand{\metaAuthorYYY}{F. Last}
-\newcommand{\metaMailYYY}{first.last@example.com}
-\newcommand{\metaInstYYY}{University, City, Country,\\Department}
-
-\newcommand{\metaAuthorXXX}{T. Do}
-\newcommand{\metaMailXXX}{first.last@example.org}
-\newcommand{\metaInstXXX}{University, City, Country,\\Department of XXX}
-% ------------------------------------------------------------------------------
-
-% author PDF -------------------------------------------------------------------
-\newcommand{\metaAuthorMail}{\metaMailYYY}
-\newcommand{\metaAuthorShort}{\metaAuthorYYY}
-% ------------------------------------------------------------------------------
-
-% author IEEE ------------------------------------------------------------------
-%\newcommand{\IEEEinstYYY}{\IEEEauthorblockA{\metaInstYYY}}
-%\newcommand{\IEEEauthorYYY}{\IEEEauthorblockN{\metaAuthorYYY}\IEEEinstYYY}
-%\newcommand{\IEEEinstXXX}{\IEEEauthorblockA{\metaInstXXX}}
-%\newcommand{\IEEEauthorXXX}{\IEEEauthorblockN{\metaAuthorXXX}\metaInstXXX}
-%\author{\IEEEauthorYYY \and \IEEEauthorXXX}
-% ------------------------------------------------------------------------------
-
-% author LLNCS -----------------------------------------------------------------
-\author{\metaAuthorYYY\inst{1} \and \metaAuthorXXX \inst{2}}
-\authorrunning{\metaAuthorYYY et al.}
-\tocauthor{\metaAuthorYYY, \metaAuthorXXX}
-\institute{\metaInstYYY\\
-\email{\metaMailYYY}
-\and
-\metaInstXXX\\
-\email{\metaMailXXX}
-}
-\titlerunning{\metaTitleShort}
-% ------------------------------------------------------------------------------
-
-\newcommand{\metaSubject}{\metaConference~-~\metaConferenceArea} 
-
-\newcommand{\metaThanks}{Research for this paper %
-was partially financed by the XXX project %
-XXX\cite{rfc748}. We thank our project partners for their %
-contributions and their collaboration to this research work.}
-% ------------------------------------------------------------------------------
-
-
-% pdf meta data ----------------------------------------------------------------
+\input{\metaFilename.meta}
 \input{lib/resources/config/pdfmetadata}
 % ------------------------------------------------------------------------------
