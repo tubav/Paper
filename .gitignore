@@ -1,5 +1,3 @@
-resources/images/example*.pdf
-template.pdf
 *.log
 *.aux
 *.idx
