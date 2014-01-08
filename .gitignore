@@ -1,5 +1,10 @@
+.DS_Store
 *.log
 *.aux
+*.bcf
 *.idx
 *.out
+*.glo
+*.run.xml
+*.xdy
 *~
