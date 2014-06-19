@@ -28,7 +28,7 @@ Getting Started
 
 * Setup your system (tested on Ubuntu 13.10)
 ```
-sudo apt-get -y install git ttf-sil-gentium ttf-sil-gentium-basic texlive-fonts-extra ttf-inconsolata texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-humanities texlive-science cm-super aspell gnuplot r-base graphviz
+sudo apt-get -y install git fonts-sil-gentium fonts-sil-gentium-basic texlive-fonts-extra fonts-inconsolata texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-humanities texlive-science cm-super aspell gnuplot r-base graphviz
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get -y install oracle-java7-installer
@@ -44,11 +44,9 @@ make clean full
 ```
 
 
-Ticket system
--------------
-Have a look at http://githubthesis.lighthouseapp.com/tickets and
-create error reports and feature requests. Also feel free to fork and
-push enhancements.
+Contribute
+----------
+Feel free to fork, push enhancements and create error reports and feature requests.
 
 References
 -----------
