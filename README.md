@@ -57,3 +57,4 @@ References
  * [How to Succeed in Graduate School "A Guide for Students and Advisors"](http://www.acm.org/crossroads/xrds1-3/advice2.html) written by Marie des Jardins
  * [Using Commas from Purdue University Online Writing Lab](http://owl.english.purdue.edu/handouts/grammar/g_comma.html), [How to Use English Punctuation Correctly](http://www.wikihow.com/Use-English-Punctuation-Correctly), [Komma in Aufzählungen](http://www.ego4u.de/de/cram-up/writing/comma?08)
  * [Genitive Basics](http://www.smic.be/smic5022/genitive.htm) and [Advanced Genitive Rules](http://www.smic.be/smic5022/Genitive2.htm)
+ * [Wissenschaftliches Schreiben: Aufbau](https://sdqweb.ipd.kit.edu/wiki/Wissenschaftliches_Schreiben/Aufbau) a Wiki (in Germany only) maintained by KIT.
