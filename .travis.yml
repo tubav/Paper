@@ -1,4 +1,5 @@
 install:
+  - sudo apt-get update
   - sudo apt-get install ttf-sil-gentium ttf-sil-gentium-basic
   - sudo apt-get install texlive-fonts-extra ttf-inconsolata ttf-droid cm-super
   - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-humanities texlive-science
