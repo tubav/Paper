@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Thesis/Paper.svg?branch=master)](https://travis-ci.org/Thesis/Paper)
+
 Sophisticated LaTeX Paper Template
 ==================================
 
