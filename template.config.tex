@@ -28,7 +28,17 @@
 
 % basic config -----------------------------------------------------------------
 \input{lib/resources/config/default}
-\usepackage{cite}                % Cite references
+%\usepackage{cite}                % Cite references %%for bibtex
+\usepackage[backend=biber,
+  style=ieee,
+  maxnames=3,
+  maxcitenames=3,
+  maxbibnames=3,
+  doi=false,
+  isbn=false,
+  url=false,
+  ]{biblatex}
+\addbibresource{\metaFilename.bib}
 \usepackage[nolist]{acronym}     % For acronyms
 % ------------------------------------------------------------------------------
 
