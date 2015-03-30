@@ -1,0 +1,363 @@
+\ProvidesFile{lncs.bbx}[2014/05/19 v0.2]
+
+\RequireBibliographyStyle{numeric}
+
+\ExecuteBibliographyOptions{firstinits=true,
+  minbibnames=1,
+  mincrossrefs=99,
+  maxbibnames=999}
+
+\newtoggle{lncs:abbrev}
+\newtoggle{lncs:series}
+\newtoggle{lncs:conference}  
+\newtoggle{lncs:lncs}
+\DeclareBibliographyOption{acronym}[true]{\toggletrue{lncs:abbrev}}
+\DeclareBibliographyOption{series}[no]{
+  \ifstrequal{#1}{short}{}{}
+  \ifstrequal{#1}{full}{}{}
+  \ifstrequal{#1}{no}{}{}
+}
+\DeclareBibliographyOption{conference}[long]{
+  \ifstrequal{#1}{long}{}{}
+  \ifstrequal{#1}{full}{}{}
+  \ifstrequal{#1}{acronym}{}{}
+}
+  
+\DeclareFieldFormat{labelnumberwidth}{#1.}
+\defbibenvironment{bibliography}
+  {\list
+     {\printfield[labelnumberwidth]{labelnumber}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{.5em}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+
+\DeclareStyleSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=series,
+        match=\regexp{Lecture\s+Notes\s+in\s+Computer\s+Science},
+        replace={LNCS}]
+      \step[fieldsource=series,
+        match=\regexp{Lecture\s+Notes\s+in\s+Artificial\s+Intelligence},
+        replace={LNAI}]
+      \step[fieldsource=series,
+        match=\regexp{Lecture\s+Notes\s+in\s+Business\s+Information\s+Processing},
+        replace={LNBIP}]
+    }
+  }
+}
+
+
+\DeclareFieldFormat{journaltitle}{#1}
+\DeclareFieldFormat[article,book,inproceedings,incollection, online,report,thesis]{title}{#1}
+\DeclareFieldFormat{booktitle}{#1}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat{year}{(#1)}
+\DeclareFieldFormat{acronym}{#1}
+
+\renewbibmacro{journal}{%
+  \iffieldundef{shortjournal}
+    {\printfield{journaltitle}}
+    {\printfield[journal]{shortjournal}}%
+}
+
+\renewbibmacro*{institution+location+date}{%
+  \printlist{location}%
+  \iflistundef{institution}
+    {\setunit*{\addcomma\space}}
+    {\setunit*{\addcolon\space}}%
+  \printlist{institution}%
+  \setunit{\addspace}
+  \printfield{year}%
+  \newunit}
+
+\newbibmacro{journal:info}{
+  \iffieldundef{volume}
+    {\iffieldundef{year}
+      {\iffieldundef{pubstate}
+        {}
+        {(\printfield{pubstate})}}
+      {\printfield{year}}}
+    {\printfield{volume}%
+      \iffieldundef{number}{}{(\printfield{number})}%
+      \iffieldundef{pages}
+        {\addspace\printfield{year}}
+        {\addcomma\addspace\printfield{pages}\addspace\printfield{year}}
+    }
+}
+
+\newbibmacro{proceedingstitle}{%
+  \iffieldundef{booktitle}
+    {\printfield{eventtitle}}
+    {\printfield{booktitle}}
+}
+
+\newbibmacro{acronym/booktitle}{%
+  \iffieldundef{acronym}
+    {\usebibmacro{proceedingstitle}}
+    {\printfield{acronym}}%
+    \addperiod\addspace
+}
+
+\newbibmacro{publisher+location}{%
+  \iftoggle{lncs:lncs}
+    {\printtext{Springer, Heidelberg}}
+    {\printlist{publisher}%
+      \iflistundef{location}
+        {}
+        {\addcomma\addspace\printlist{location}}%
+    }%
+}
+
+\renewbibmacro{finentry}{\settoggle{lncs:lncs}{false}\finentry}
+\renewcommand*{\bibinitdelim}{}
+
+\renewcommand{\labelnamepunct}{\addcolon\space}
+
+\DeclareNameFormat{author}{%
+  \ifblank{#5}{}{#5\space}#1, #4%
+  \ifthenelse{\value{listcount}<\value{liststop}}
+    {\addcomma\space}%
+    {}%
+}
+
+\DeclareNameFormat{editor}{%
+  \ifblank{#5}{}{#5\space}#1, #4%
+  \ifthenelse{\value{listcount}<\value{liststop}}
+    {\addcomma\space}%
+    {\space\ifthenelse{\value{listcount}>1}
+      {(\bibstring{editors})}
+      {(\bibstring{editor})}}%
+}
+
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \printnames{author}%
+  \setunit*{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \newunit\newblock
+  \usebibmacro{journal}%
+  \usebibmacro{journal:info}%
+  \newunit\newblock
+  \printfield{addendum}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \nopunct%
+  \usebibmacro{finentry}%
+}
+
+\DeclareBibliographyDriver{book}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \ifnameundef{author}
+    {\printnames{editor}}
+    {\printnames{author}}%
+  \setunit*{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \newunit%
+  \usebibmacro{publisher+location}%
+  \setunit{\addspace}
+  \printfield{year}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \nopunct%
+  \usebibmacro{finentry}%
+}
+
+\DeclareBibliographyDriver{inproceedings}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \printnames{author}
+  \setunit*{\labelnamepunct}\newblock%
+  \usebibmacro{title}
+  \newunit\newblock
+  \usebibmacro{in:}%
+  \printnames{editor}%
+  \newunit
+  \iffieldundef{series}
+    {\iftoggle{lncs:abbrev}
+      {\usebibmacro{acronym/booktitle}}
+      {\usebibmacro{proceedingstitle}\newunit}%
+    }%
+    {\ifboolexpr{
+        test {\iffieldequalstr{series}{LNAI}}
+        or
+        test {\iffieldequalstr{series}{LNCS}}
+        or
+        test {\iffieldequalstr{series}{LNBIP}}
+      }
+      {\settoggle{lncs:lncs}{true}%
+       \usebibmacro{acronym/booktitle}%
+       \printfield{series}
+       \addcomma\newunit
+       \iffieldundef{volume}
+         {\iffieldundef{number}{}{vol.\addspace\printfield{number}\addcomma}}
+         {\printfield{volume}}%
+      }%
+      {\usebibmacro{acronym/booktitle}%
+       \printfield{series}}%
+    }
+  \iffieldundef{pages}{}{\setunit{\addcomma\space}\printfield{pages}}%
+  \newunit%
+  \usebibmacro{publisher+location}%
+  \setunit{\addspace}%
+  \printfield{year}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \nopunct%
+  \usebibmacro{finentry}%
+}
+
+\DeclareBibliographyDriver{proceedings}{PROCEEDINGS}
+
+\DeclareBibliographyDriver{incollection}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \printnames{author}
+  %\setunit*{\addcolon\space}
+  \setunit*{\labelnamepunct}\newblock%
+  \usebibmacro{title}
+  %\printfield[article]{title}
+  \newunit\newblock
+  %\printtext{In:}
+  \usebibmacro{in:}%
+  \usebibmacro{maintitle+booktitle}%
+  \newunit\newblock
+  %\printnames{editor}
+  \usebibmacro{byeditor+others}
+  \newunit
+  \iffieldundef{pages}{}{\addcomma\addspace\printfield{pages}}
+  \newunit
+  \usebibmacro{publisher+location}%
+  \printfield{year}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \nopunct%
+  \usebibmacro{finentry}%
+}
+
+\DeclareFieldFormat{url}{\url{#1}}
+
+\DeclareBibliographyDriver{online}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \setunit*{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \addcomma\newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{byeditor+others}%
+  \newunit\newblock
+  \printfield{version}%
+  \newunit
+  \printfield{note}%
+  \newunit\newblock
+  \printlist{organization}%
+  \newunit\newblock
+  \printfield{year}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{url+urldate}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \nopunct%
+  \usebibmacro{finentry}
+}
+
+\DeclareBibliographyDriver{misc}{MISC}
+\DeclareBibliographyDriver{thesis}{THESIS}
+
+\DeclareBibliographyDriver{report}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \setunit*{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \printfield{type}%
+  \setunit*{\addspace}%
+  \printfield{number}%
+  \addcomma\newunit\newblock
+  \printfield{version}%
+  \newunit
+  \printfield{note}%
+  \newunit\newblock
+  \usebibmacro{chapter+pages}%
+  \newunit
+  \printfield{pagetotal}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{isrn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{institution+location+date}%
+  %\newunit\newblock
+  %\usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \nopunct%
+  \usebibmacro{finentry}
+}
+
+% \DeclareBibliographyDriver{*}{%
+%   Titolo: \printfield{title}\\
+%   Autore: \printnames{author}\\
+%   Prova:  \printfield{acronym}%
+% }
