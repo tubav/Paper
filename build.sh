@@ -14,8 +14,9 @@
 source ./$0.config
 source ./$DIR_BLD/$0.lib
 
-[ -f "${FILE_GEN_BIB}" ] && cp "${FILE_GEN_BIB}" "${FILE_BIB}"
-[ -f "$${FILE_GEN_ACRO}" ] && cp "${FILE_GEN_ACRO}" "${FILE_ACRO}"
+[ -f "${FILE_GEN_BIB}" ] && cp "${FILE_GEN_BIB}" "global-do-not-edit.bib"
+[ -f "${FILE_GEN_ACRO}" ] && cp "${FILE_GEN_ACRO}" "global-do-not-edit.acro.tex"
+[ -f "${FILE_GEN_AUTHORS}" ] && cp "${FILE_GEN_AUTHORS}" "global-do-not-edit.authors.tex"
 #===============================================================================
 
 

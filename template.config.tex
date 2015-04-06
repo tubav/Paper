@@ -41,6 +41,7 @@
   ]{biblatex}
 %\renewbibmacro*{bbx:savehash}{}  % to enabled the "dashed=false" option in ieee
 \addbibresource{\metaFilename.bib}
+\IfFileExists{global-do-not-edit.bib}{\addbibresource{global-do-not-edit.bib}}{}
 %\usepackage[nolist]{acronym}     % For acronyms
 \usepackage{acro}     % For acronyms
 % ------------------------------------------------------------------------------
