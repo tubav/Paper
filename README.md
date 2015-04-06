@@ -16,7 +16,7 @@ instructions and is basically following the article [Tipps zum Schreiben von Kon
 Main Features
 -------------
 
-* PDF support: hyperlinks, ToC, annotations, meta-data
+* PDF support: hyperlinks, ToC, annotations, native and XMP meta-data
 * Language support: UTF8 encoding, support for CJK and German
 * Integration: buildbot test script, TeXlipse project file, graphviz, gnuplot, R
 * Build file: clean, compile, image generation, validation
