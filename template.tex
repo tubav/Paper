@@ -3,6 +3,7 @@
 \input{\metaFilename.config.tex}
 \input{\metaFilename.acro.tex} % acro package
 \IfFileExists{global-do-not-edit.acro.tex}{\input{global-do-not-edit.acro.tex}}{}
+\AtBeginDocument{\let\textlabel\label}
 % /* ------------------------------------------------------------------------ */
 
 % /* begin paper ------------------------------------------------------------ */
@@ -21,7 +22,7 @@
     
     % /* -------------------------------------------------------------------- */
     \begin{abstract}
-    \input{src/abstract}
+    \input{src/00_abstract}
     \end{abstract}
 
     %IEEE
@@ -32,12 +33,12 @@
     
     % /* -------------------------------------------------------------------- */
     %\mainmatter
-    \input{src/introduction}
-    \input{src/relatedwork}
-    \input{src/main}
-    \input{src/evaluation}
-    \input{src/conclusions}
-    \input{src/acknowledgements}
+    \input{src/01_introduction}
+    \input{src/02_relatedwork}
+    \input{src/03_approach}
+    \input{src/04_evaluation}
+    \input{src/05_conclusions}
+    \input{src/00_acknowledgements}
 
     %%for bibtex
     %\bibliographystyle{IEEEtran}
