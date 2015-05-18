@@ -5,6 +5,8 @@
 *.idx
 *.out
 *.glo
+*.blg
 *.run.xml
 *.xdy
+bibtex_check.html
 *~
