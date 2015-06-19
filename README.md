@@ -52,9 +52,18 @@ Feel free to fork, push enhancements and create error reports and feature reques
 
 FAQ
 ---
- * I've an issue generating the bibliography: ```read_file '/var/folders/4g/k3fmw4kj1kn9842k0m2lyqw80000gn/T/par-77696c6c6e6572/cache-a3cdad92316c60c9c5179d80d6bb51a7a024393c//inc/lib/Biber/LaTeX/recode_data.xml' - sysopen: No such file or directory at /var/folders/4g/k3fmw4kj1kn9842k0m2lyqw80000gn/T/par-77696c6c6e6572/cache-a3cdad92316c60c9c5179d80d6bb51a7a024393c/bda77484.pm line 112.```
-   * Solution: rm -rf $(biber --cache)
 
+#### I've an issue generating the bibliography
+ * Symptom: ```read_file '/var/folders/4g/k3fmw4kj1kn9842k0m2lyqw80000gn/T/par-77696c6c6e6572/cache-a3cdad92316c60c9c5179d80d6bb51a7a024393c//inc/lib/Biber/LaTeX/recode_data.xml' - sysopen: No such file or directory at /var/folders/4g/k3fmw4kj1kn9842k0m2lyqw80000gn/T/par-77696c6c6e6572/cache-a3cdad92316c60c9c5179d80d6bb51a7a024393c/bda77484.pm line 112.```
+ * Solution: rm -rf $(biber --cache)
+
+### I've an issue with the make command or compiling not finding a file
+ * Symptom: An error similar to: ```File 'lib/resources/XXX not found```
+ * Solution:
+ You forgot to checkout the repository with the ```--recursive``` option.
+ Do it again with the parameter.
+ Or run ```make``` once without any parameter.
+ Or run ```	@git submodule update --init --recursive```.
 
 References
 -----------
