@@ -42,8 +42,14 @@ sudo dpkg -i plantuml_7707-1_all.deb
 ```
 git clone --recursive git://github.com/Thesis/Paper.git
 cd Paper
+make
+```
+
+* Create a new paper
+```
 make rename
 make clean full
+make open
 ```
 
 Contribute
