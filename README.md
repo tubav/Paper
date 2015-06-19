@@ -42,8 +42,14 @@ sudo dpkg -i plantuml_7707-1_all.deb
 ```
 git clone --recursive git://github.com/Thesis/Paper.git
 cd Paper
+make
+```
+
+* Create a new paper
+```
 make rename
 make clean full
+make open
 ```
 
 Contribute
@@ -55,15 +61,17 @@ FAQ
 
 #### I've an issue generating the bibliography
  * Symptom: ```read_file '/var/XXX/cache-XXX/inc/lib/Biber/LaTeX/recode_data.xml' - sysopen: No such file or directory at /var/XXX/cache-XXX/bda77484.pm line 112.```
+ * Cause: Weired biber bug
  * Solution: Run ```rm -rf $(biber --cache)```
 
 ### I've an issue with the make command or compiling not finding a file
  * Symptom: An error similar to: ```File 'lib/resources/XXX' not found```
+ * Cause: You forgot to checkout the repository with the ```--recursive``` option. E.g. you downloaded the ZIP file.
  * Solution:
- You forgot to checkout the repository with the ```--recursive``` option.
- Do it again with the parameter (as stated in the command above).
+ Checkout the repository as stated in the command above.
  Or run ```make``` once without any parameters.
  Or run ```	@git submodule update --init --recursive```.
+ Or run ```git clone https://github.com/Thesis/Core.git lib```.
 
 References
 -----------
