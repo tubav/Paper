@@ -23,7 +23,7 @@ addons:
       - r-base
       - graphviz
 install:
-  - sudo apt-get install ttf-sil-gentium ttf-sil-gentium-basic ttf-inconsolata ttf-droid cm-super biber
+  - sudo apt-get install fonts-sil-gentium fonts-inconsolata fonts-droid fonts-sil-gentium-basic cm-super biber
   - wget http://yar.fruct.org/attachments/download/362/plantuml_7707-1_all.deb
   - sudo dpkg -i plantuml_7707-1_all.deb
   - curl -L "http://downloads.sourceforge.net/project/biblatex-biber/biblatex-biber/0.9.9/binaries/Linux/biber-linux_x86_64.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fbiblatex-biber%2Ffiles%2Fbiblatex-biber%2F0.9.9%2Fbinaries%2FLinux%2F&ts=1422482813&use_mirror=softlayer-ams"|tar xzf -
