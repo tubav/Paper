@@ -17,6 +17,7 @@ addons:
       - texlive-latex-extra
       - texlive-humanities
       - texlive-science
+      - latex-xcolor
 #      - biblatex
       - biber
       - aspell
