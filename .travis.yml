@@ -7,6 +7,7 @@ addons:
     packages:
       - ttf-sil-gentium
       - ttf-sil-gentium-basic
+      - texlive-fonts-recommended
       - texlive-fonts-extra
       - ttf-inconsolata
       - ttf-droid
