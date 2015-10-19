@@ -31,8 +31,7 @@ install:
   #- export PATH=$PATH:.
 
 script:
-  - make all
-  - cat build.sh.log
+  - make all || cat build.sh.log
 
 notifications:
   email:
