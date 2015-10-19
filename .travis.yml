@@ -14,6 +14,7 @@ addons:
       - texlive-science
       - texlive-pictures
       - latex-xcolor
+      - pgf
       - aspell
       - gnuplot
       - r-base
