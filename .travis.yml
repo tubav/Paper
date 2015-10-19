@@ -5,25 +5,23 @@ addons:
     sources:
       - ppa:texlive-backports/ppa
     packages:
-      - ttf-sil-gentium
-      - ttf-sil-gentium-basic
       - texlive-fonts-recommended
       - texlive-fonts-extra
-      - ttf-inconsolata
-      - ttf-droid
-      - cm-super
       - texlive-xetex
       - texlive-latex-recommended
       - texlive-latex-extra
       - texlive-humanities
       - texlive-science
+      - texlive-pictures
       - latex-xcolor
-#      - biblatex
-      - biber
       - aspell
       - gnuplot
       - r-base
       - graphviz
+      - fonts-sil-gentium
+      - fonts-inconsolata
+      - fonts-droid
+      - fonts-sil-gentium-basic
 install:
   - sudo apt-get -y install fonts-sil-gentium fonts-inconsolata fonts-droid fonts-sil-gentium-basic cm-super biber
   - wget http://yar.fruct.org/attachments/download/362/plantuml_7707-1_all.deb
