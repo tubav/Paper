@@ -44,6 +44,30 @@
 \IfFileExists{global-do-not-edit.bib}{\addbibresource{global-do-not-edit.bib}}{}
 %\usepackage[nolist]{acronym}     % For acronyms
 \usepackage{acro}     % For acronyms
+\robustify\footnote
+\robustify\url
+\ExplSyntaxOn
+\NewDocumentCommand \aclu {sm}
+  {
+    \group_begin:
+      \acro_check_acronym:nn {#2} {false}
+      \acro_if_acronym_used:nTF {#2} {} { \acro_cite: }
+      \acro_long:n {#2}
+      \IfBooleanF #1 { \acro_mark_as_used:n {#2} }
+    \group_end:
+  }
+% upper case version:
+\NewDocumentCommand \Aclu {sm}
+  {
+    \group_begin:
+      \acro_check_acronym:nn {#2} {false}
+      \acro_upper:
+      \acro_if_acronym_used:nTF {#2} {} { \acro_cite: }
+      \acro_long:n {#2}
+      \IfBooleanF #1 { \acro_mark_as_used:n {#2} }
+    \group_end:
+  }
+\ExplSyntaxOff
 % ------------------------------------------------------------------------------
 
 
