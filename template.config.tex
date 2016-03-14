@@ -43,32 +43,58 @@
 %\renewbibmacro*{bbx:savehash}{}  % to enabled the "dashed=false" option in ieee
 \addbibresource{\metaFilename.bib}
 \IfFileExists{global-do-not-edit.bib}{\addbibresource{global-do-not-edit.bib}}{}
-%\usepackage[nolist]{acronym}     % For acronyms
-\usepackage{acro}     % For acronyms
-\robustify\footnote
-\robustify\url
-\ExplSyntaxOn
-\NewDocumentCommand \aclu {sm}
-  {
-    \group_begin:
-      \acro_check_acronym:nn {#2} {false}
-      \acro_if_acronym_used:nTF {#2} {} { \acro_cite: }
-      \acro_long:n {#2}
-      \IfBooleanF #1 { \acro_mark_as_used:n {#2} }
-    \group_end:
-  }
-% upper case version:
-\NewDocumentCommand \Aclu {sm}
-  {
-    \group_begin:
-      \acro_check_acronym:nn {#2} {false}
-      \acro_upper:
-      \acro_if_acronym_used:nTF {#2} {} { \acro_cite: }
-      \acro_long:n {#2}
-      \IfBooleanF #1 { \acro_mark_as_used:n {#2} }
-    \group_end:
-  }
-\ExplSyntaxOff
+% ------------------------------------------------------------------------------
+
+
+% acronyms ---------------------------------------------------------------------
+\usepackage{acro}
+\DeclareInstance{acro-page-number}{dotfill}{default}{
+  punct = true,
+  punct-symbol = \linebreak[1]\null\dotfill\nobreak%
+}
+\acsetup{
+            single=false,
+            sort=true,
+            list-style=longtable,
+            page-ref=dotfill, % or =plain
+            index, %  migh result in 'pdfTeX warning (dest): name... has been referenced but does not exist, replaced by a fixed one'
+            pages=first,
+            page-name={},
+            pages-name={},
+}
+\robustify\footnote%
+\robustify\url%
+\newif\ifacrousefootnote%
+\newcommand\acfootnote[1]{\ifacrousefootnote\footnote{#1}\fi}
+
+\makeatletter\newif\ifnewacro%
+\@ifpackagelater{acro}{2015/08/15}{% version 2.0 or later
+\setboolean{newacro}{true}
+}{% else hide footnotes and citations
+\setboolean{newacro}{false}
+\typeout{warning: your acro package is too old (<2.0)}
+}%
+\makeatother
+\ifnewacro% show footnotes only once
+    \ExplSyntaxOn%
+    \NewAcroCommand\aclu%
+      {
+        \acro_is_used:nF {#1}
+          { \acrousefootnotetrue\acro_cite: }
+        \acro_long:n {#1}
+      }
+    \NewAcroCommand\Aclu%
+      {
+        \acro_if_acronym_used:nF {#1}
+          { \acrousefootnotetrue\acro_cite: }
+        \acro_first_upper:
+        \acro_long:n {#1}
+      }
+    \ExplSyntaxOff%
+\else
+    \newcommand{\aclu}[1]{\acs{#1}}
+    \newcommand{\Aclu}[1]{\Acs{#1}}
+\fi
 % ------------------------------------------------------------------------------
 
 
