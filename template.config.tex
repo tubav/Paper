@@ -31,7 +31,7 @@
 \usepackage{float}                % Provides the H float modifier option
 %\usepackage{cite}                % Cite references %%for bibtex
 \usepackage[backend=biber,
-  style=ieee,%numeric-comp
+  style=numeric-comp,%ieee,%numeric-comp
   maxnames=3,
   maxcitenames=3,
   maxbibnames=3,
@@ -48,7 +48,7 @@
 
 % acronyms ---------------------------------------------------------------------
 \usepackage{acro}
-\DeclareInstance{acro-page-number}{dotfill}{default}{
+\DeclareAcroPageStyle{dotfill}{inline}{
   punct = true,
   punct-symbol = \linebreak[1]\null\dotfill\nobreak%
 }
@@ -56,7 +56,7 @@
             single=false,
             sort=true,
             list-style=longtable,
-            page-ref=dotfill, % or =plain
+            page-style=dotfill, % or =plain
             index, %  migh result in 'pdfTeX warning (dest): name... has been referenced but does not exist, replaced by a fixed one'
             pages=first,
             page-name={},
