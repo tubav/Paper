@@ -26,10 +26,8 @@
     \input{src/00_abstract}
     \end{abstract}
 
-    %IEEE
-    %\begin{IEEEkeywords}\metaKeywords\end{IEEEkeywords}
-    %LLNCS
-    \keywords{\metaKeywords}
+    %\begin{IEEEkeywords}\metaKeywords\end{IEEEkeywords} % enable for IEEE style
+    \keywords{\metaKeywords} % enable for LLNCS style
     % /* -------------------------------------------------------------------- */
 
     % /* -------------------------------------------------------------------- */
@@ -41,11 +39,9 @@
     \input{src/05_conclusions}
     \input{src/00_acknowledgements}
 
-    %%for bibtex
-    %\bibliographystyle{IEEEtran}
-    %\bibliography{\metaFilename}
-    %%for biber
-    \printbibliography
+    %\bibliographystyle{IEEEtran} % enable for bibtex
+    %\bibliography{\metaFilename} % enable for bibtex
+    \printbibliography % enable for biber style
     % to show unreferenced publications ------------------------------------- */
     %\bibliographystyle{unsrt}
     %\cite{dummy}
