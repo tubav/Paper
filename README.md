@@ -38,6 +38,15 @@ wget http://yar.fruct.org/attachments/download/362/plantuml_7707-1_all.deb
 sudo dpkg -i plantuml_7707-1_all.deb
 ```
 
+* Setup your system (tested on macOS 10.12)
+```
+# first install brew
+brew cask install mactex
+brew tap homebrew/science
+brew install plantuml graphviz gnuplot r aspell --with-lang-de
+```
+
+
 * Work with the paper
 ```
 git clone --recursive git://github.com/Thesis/Paper.git
