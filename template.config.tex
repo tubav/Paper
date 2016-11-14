@@ -6,7 +6,7 @@
 % docuemnt class ---------------------------------------------------------------
 \documentclass[
         a4paper,                % use a5paper for ISO A5; use a4paper for ISO A4
-        pdftex,                 % PDF output
+%        pdftex,                 % PDF output
         10pt,                   % font size
  conference,             % enable for IEEE style
  romanappendices,        % enable for IEEE style
@@ -98,6 +98,8 @@
 
 % hyperlinks (last package) ----------------------------------------------------
 \usepackage{hyperxmp}                 % Semantic meta data (RDF/XMP)
+\makeatletter
+\@ifpackageloaded{tex4ht}{\usepackage[tex4ht]{hyperref}}{
 \usepackage[pdftex,                   % Hyperlinks in PDFs
 raiselinks=true,			          % calculate real height of the link
 breaklinks,                           % break links
@@ -131,6 +133,8 @@ pdfencoding=auto,
 %\renewcommand*{\todo}[1]{}            % For submission
 %\renewcommand*{\todotext}[1]{}        % For submission
 %\renewcommand*{\sidenote}[1]{}        % For submission
+}
+\makeatother
 \usepackage{cleveref}                 % To ref footnotes twice (use after hyperref)
 % ------------------------------------------------------------------------------
 
