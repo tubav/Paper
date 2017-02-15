@@ -23,7 +23,7 @@ Main Features
 * Validation: orthography (incl. project dictionary), hyphens, commas, references, todos, best practices, l2tabu, latex/bibtex warnings
 * Media: examples for images, multiple images, equations, tables, algorithms
 * Bibliography: multiple files, link to the source page, show unreferenced items
-* Other: side notes, line numbering
+* Other: side notes, line numbering, overleaf.com support
 
 Getting Started
 ---------------
@@ -60,6 +60,13 @@ make rename
 make clean full
 make open
 ```
+
+* Create a paper at overleaf.com
+  * Create new ZIP file: ```git clone --recursive git://github.com/Thesis/Paper.git && zip -r Paper.zip Paper/```
+  * Open https://www.overleaf.com/dash and upload ```Paper.zip```
+  * Open project and define ```template.tex``` as main file (should work)
+  * Clone project via git
+  * Run ```chmod +x build.sh && make debug && make clean full open```  (should work)
 
 Contribute
 ----------
