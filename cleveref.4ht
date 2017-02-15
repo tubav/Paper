@@ -1,0 +1,20 @@
+\def\refstepcounter@noarg#1{%
+  \cref@old@refstepcounter{#1}%
+  \cref@constructprefix{#1}{\cref@result}%
+  \@ifundefined{cref@#1@alias}%
+    {\def\@tempa{#1}}%
+    {\def\@tempa{\csname cref@#1@alias\endcsname}}%
+  \protected@xdef\cref@currentlabel{%
+    [\@tempa][\arabic{#1}][\cref@result]%
+    \csname p@#1\endcsname\csname the#1\endcsname}
+    }%
+\def\refstepcounter@optarg[#1]#2{%
+  \cref@old@refstepcounter{#2}%
+  \cref@constructprefix{#2}{\cref@result}%
+  \@ifundefined{cref@#1@alias}%
+    {\def\@tempa{#1}}%
+    {\def\@tempa{\csname cref@#1@alias\endcsname}}%
+  \protected@edef\cref@currentlabel{%
+    [\@tempa][\arabic{#2}][\cref@result]%
+    \csname p@#2\endcsname\csname the#2\endcsname}}%
+

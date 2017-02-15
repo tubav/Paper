@@ -11,8 +11,8 @@
 #===============================================================================
 # Configuration
 #===============================================================================
-source ./$0.config
-source ./$DIR_BLD/$0.lib
+source ./build.config.sh
+source ./$DIR_BLD/build.lib.sh
 
 [ -f "${FILE_GEN_BIB}" ] && cp "${FILE_GEN_BIB}" "global-do-not-edit.bib"
 [ -f "${FILE_GEN_ACRO}" ] && cp "${FILE_GEN_ACRO}" "global-do-not-edit.acro.tex"
