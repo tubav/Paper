@@ -1,7 +1,6 @@
 % /* include config --------------------------------------------------------- */
-\newcommand{\metaFilename}{template}
-\input{\metaFilename.config.tex}
-\input{\metaFilename.acro.tex} % acro package
+\input{template.config.tex}
+\input{template.acro.tex} % acro package
 \IfFileExists{global-do-not-edit.acro.tex}{\input{global-do-not-edit.acro.tex}}{}
 \AtBeginDocument{\let\textlabel\label}
 \ieeecopyright{.2}{0.055}{978-1-4799-1234-5/67/\$31.00~\copyright~2015~IEEE}
@@ -11,7 +10,7 @@
 \begin{document}
     % /* acronym package ---------------------------------------------------- */
     %\begin{acronym}
-    %    \input{\metaFilename.acro.tex}
+    %    \input{template.acro.tex}
     %\end{acronym}
     % /* -------------------------------------------------------------------- */
 
@@ -40,7 +39,7 @@
     \input{src/00_acknowledgements}
 
     %\bibliographystyle{IEEEtran} % enable for bibtex
-    %\bibliography{\metaFilename} % enable for bibtex
+    %\bibliography{template} % enable for bibtex
     \printbibliography % enable for biber style
     % to show unreferenced publications ------------------------------------- */
     %\bibliographystyle{unsrt}
