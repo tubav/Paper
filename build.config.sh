@@ -22,6 +22,7 @@ DIR_LYT="$DIR_RES/layout";
 DIR_ANA="$DIR_RES/analyzer";
 DIR_SCR="$DIR_RES/scripts";
 DIR_BLD="lib/$DIR_RES/build";
+DIR_CFG="lib/$DIR_RES/config";
 REQ_DIRS="$DIR_TMP $DIR_DEST $DIR_SRC $DIR_RES $DIR_TMP $DIR_IMG";
 REQ_APPLICATIONS="pdflatex aspell perl epstopdf gnuplot Rscript pdfopt plantuml";
 FILE_ABSTRACT="$DIR_SRC/00_abstract.tex";
