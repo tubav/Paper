@@ -17,6 +17,7 @@ source ./$DIR_BLD/build.lib.sh
 [ -f "${FILE_GEN_BIB}" ] && cp "${FILE_GEN_BIB}" "global-do-not-edit.bib"
 [ -f "${FILE_GEN_ACRO}" ] && cp "${FILE_GEN_ACRO}" "global-do-not-edit.acro.tex"
 [ -f "${FILE_GEN_AUTHORS}" ] && cp "${FILE_GEN_AUTHORS}" "global-do-not-edit.authors.tex"
+[ -d "${DIR_GEN_SPELL}" ] && ln -sf "${DIR_GEN_SPELL}/".aspell.* "${DIR_RES}/"
 #===============================================================================
 
 
