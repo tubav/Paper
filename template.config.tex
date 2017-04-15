@@ -57,20 +57,22 @@
 
 % acronyms ---------------------------------------------------------------------
 \usepackage{acro}
-\DeclareAcroPageStyle{dotfill}{inline}{
-  punct = true,
-  punct-symbol = \linebreak[1]\null\dotfill\nobreak%
-}
-\acsetup{
-            single=false,
-            sort=true,
-            list-style=longtable,
-            page-style=dotfill, % or =plain
-            index, %  migh result in 'pdfTeX warning (dest): name... has been referenced but does not exist, replaced by a fixed one'
-            pages=first,
-            page-name={},
-            pages-name={},
-}
+%% uncomment if you use a list of acronyms
+%% (note: you might need a recent version of this package)
+%\DeclareAcroPageStyle{dotfill}{inline}{
+%  punct = true,
+%  punct-symbol = \linebreak[1]\null\dotfill\nobreak%
+%}
+%\acsetup{
+%            single=false,
+%            sort=true,
+%            list-style=longtable,
+%            page-style=dotfill, % or =plain
+%            index, %  migh result in 'pdfTeX warning (dest): name... has been referenced but does not exist, replaced by a fixed one'
+%            pages=first,
+%            page-name={},
+%            pages-name={},
+%}
 \robustify\footnote%
 \robustify\url%
 \newif\ifacrousefootnote%
