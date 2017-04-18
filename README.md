@@ -84,7 +84,7 @@ FAQ
  * Cause: Weired biber bug
  * Solution: Run ```rm -rf $(biber --cache)```
 
-### I've an issue with the make command or compiling not finding a file
+#### I've an issue with the make command or compiling not finding a file
  * Symptom: An error similar to: ```File 'lib/resources/XXX' not found```
  * Cause: You forgot to checkout the repository with the ```--recursive``` option. E.g. you downloaded the ZIP file.
  * Solution:
