@@ -49,9 +49,7 @@ brew install plantuml graphviz gnuplot r aspell --with-lang-de
 
 * Work with the paper
 ```
-git clone --recursive git://github.com/Thesis/Paper.git
-cd Paper
-make
+git clone --recursive git://github.com/Thesis/Paper.git && cd Paper && make
 ```
 
 * Create a new paper
@@ -60,6 +58,12 @@ make rename
 make clean full
 make open
 ```
+
+* Create a new paper manually
+```
+pdflatex template && pdflatex template && biber template && pdflatex template && pdflatex template
+```
+
 
 * Create a paper at overleaf.com
   * Create new ZIP file: ```git clone --recursive git://github.com/Thesis/Paper.git && zip -r Paper.zip Paper/```
@@ -80,7 +84,7 @@ FAQ
  * Cause: Weired biber bug
  * Solution: Run ```rm -rf $(biber --cache)```
 
-### I've an issue with the make command or compiling not finding a file
+#### I've an issue with the make command or compiling not finding a file
  * Symptom: An error similar to: ```File 'lib/resources/XXX' not found```
  * Cause: You forgot to checkout the repository with the ```--recursive``` option. E.g. you downloaded the ZIP file.
  * Solution:
