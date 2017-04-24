@@ -16,7 +16,7 @@ html:
 	pdflatex template
 	biber template
 	pdflatex template
-	xhlatex template "myhtml,xhtml,charset=utf-8,fn-in" "-cunihtf -utf8"
-	perl -i -0pe 's/<img.*\n.*alt="PICT".*//g' template.html
-	perl -i -0pe 's/<hr class=".*figure".*\/>//g' template.html
-	perl -i -0pe 's/<\?.*\n.*\n.*\n.*\n//' template.html
+	make4ht -u -d html template "htmlimages,htmlcolor,html5,charset=utf-8,fn-in"
+	perl -i -0pe 's/<img.*\n.*alt="PICT".*//g' html/template.html
+	perl -i -0pe 's/<hr class=".*figure".*\/>//g' html/template.html
+	perl -i -0pe 's/<\?.*\n.*\n.*\n.*\n//' html/template.html
