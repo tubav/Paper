@@ -5,6 +5,7 @@
 *.idx
 *.out
 *.glo
+*.bbl
 *.blg
 *.run.xml
 *.xdy
