@@ -3,7 +3,16 @@
 \input{template.acro.tex} % acro package
 \IfFileExists{global-do-not-edit.acro.tex}{\input{global-do-not-edit.acro.tex}}{} % chktex 27
 \AtBeginDocument{\let\textlabel\label}
+
+% IEEE copyright ---------------------------------------------------------------
+%\usepackage[pscoord]{eso-pic}
+%\newcommand{\ieeecopyright}[3]{
+%  \setbox0=\hbox{#3}
+%  \AddToShipoutPictureFG*{ \put(\LenToUnit{#1\paperwidth},\LenToUnit{#2\paperheight}){\vtop{{\null}\makebox[0pt][c]{#3}}}}
+%}
 %\ieeecopyright{.2}{0.055}{978-1-4799-1234-5/67/\$31.00~\copyright~2015~IEEE}
+% IEEE copyright ---------------------------------------------------------------
+
 % /* ------------------------------------------------------------------------ */
 
 % /* begin paper ------------------------------------------------------------ */
