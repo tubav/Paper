@@ -47,7 +47,8 @@ brew install plantuml graphviz gnuplot r aspell --with-lang-de
 #### Minimal installation (400 MB)
 ```
 brew cask install basictex
-sudo tlmgr install IEEEtran algorithms wrapfig sttools paralist lipsum ellipsis mktexlsr blindtext ifoddpage needspace marginnote biblatex logreq xstring acro translations hyperxmp cleveref biber cm-super
+tlmgr install texliveonfly biber
+texliveonfly template
 ```
 
 ## Getting Started
