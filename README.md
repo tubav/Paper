@@ -22,34 +22,34 @@ instructions and is basically following the article [Tipps zum Schreiben von Kon
 * Bibliography: multiple files, link to the source page, show unreferenced items
 * Other: side notes, line numbering, overleaf.com support
 * Build system:
- * clean     : Delete temporary files
- * all       : Create the PDF file (run everything needed)
- * full      : Create the PDF file (run LaTeX and BibTeX only)
- * quicker   : Update the PDF file (just run LaTeX twice)
- * quick     : Update the PDF file (just run LaTeX once)
- * bib       : Update the bib file (just run BibTeX/biber once)
- * bibchk    : Run some checks (e.g. biber, bibtex-check)
- * verify    : Run some checks (e.g. l2tabu)
- * spell     : Check for spelling errors (aspell)
- * eval      : Run evaluation scripts (e.g. R)
- * generate  : Generate images (gnuplot, R, dot/graphviz, ...)
- * deploy    : Deploy the PDF file to a directory (e.g. for automated builds)
- * update    : Get the latest sources (incl. latest library)
- * open      : Opens the output file using 'open'
- * ci        : Continuous Integration - watch for changes an rebuild everything
- * rename    : Rename project
- * unicode   : Find incompatible unicode characters
- * optimize  : Optimize output (e.g. optipng)
- * sign      : Sign the PDF using an X.509 certificate
- * preflight : Test for PDF/A and PDF/X compatibility
- * fix       : Give some hints on how to fix the current setup
- * todo      : Find open todos
- * debug     : Compile and stop on error and show line number
- * updating  : Keep updating in the background to avoid conflicts
- * ieee      : Enable IEEE Transaction style
- * llncs     : Enable LLNCS style
- * content   : Answer basic questions to bootstrap your paper
- * count     : Count number of words, figures, tables, captions, ...
+  * clean     : Delete temporary files
+  * all       : Create the PDF file (run everything needed)
+  * full      : Create the PDF file (run LaTeX and BibTeX only)
+  * quicker   : Update the PDF file (just run LaTeX twice)
+  * quick     : Update the PDF file (just run LaTeX once)
+  * bib       : Update the bib file (just run BibTeX/biber once)
+  * bibchk    : Run some checks (e.g. biber, bibtex-check)
+  * verify    : Run some checks (e.g. l2tabu)
+  * spell     : Check for spelling errors (aspell)
+  * eval      : Run evaluation scripts (e.g. R)
+  * generate  : Generate images (gnuplot, R, dot/graphviz, ...)
+  * deploy    : Deploy the PDF file to a directory (e.g. for automated builds)
+  * update    : Get the latest sources (incl. latest library)
+  * open      : Opens the output file using 'open'
+  * ci        : Continuous Integration - watch for changes an rebuild everything
+  * rename    : Rename project
+  * unicode   : Find incompatible unicode characters
+  * optimize  : Optimize output (e.g. optipng)
+  * sign      : Sign the PDF using an X.509 certificate
+  * preflight : Test for PDF/A and PDF/X compatibility
+  * fix       : Give some hints on how to fix the current setup
+  * todo      : Find open todos
+  * debug     : Compile and stop on error and show line number
+  * updating  : Keep updating in the background to avoid conflicts
+  * ieee      : Enable IEEE Transaction style
+  * llncs     : Enable LLNCS style
+  * content   : Answer basic questions to bootstrap your paper
+  * count     : Count number of words, figures, tables, captions, ...
 
 
 ## Install
