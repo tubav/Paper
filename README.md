@@ -76,7 +76,7 @@ brew install plantuml graphviz gnuplot r aspell --with-lang-de
 #### Minimal installation (400 MB)
 ```
 brew cask install basictex
-tlmgr install texliveonfly biber collection-fontsrecommended
+tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran
 texliveonfly template
 ```
 
