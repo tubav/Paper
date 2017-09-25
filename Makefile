@@ -12,6 +12,7 @@ html:
 	@echo "TODO: fix issues with subfigures"
 	@echo "TODO: fix issues with index"
 	@echo "TODO: enhance 'make clean'"
+	@echo "TODO: mention 'tlmgr install make4ht tex4ht'"
 	pdflatex template
 	pdflatex template
 	biber template
