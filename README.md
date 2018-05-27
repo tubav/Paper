@@ -128,11 +128,10 @@ Feel free to fork, push enhancements and create error reports and feature reques
 
 ## References
 
- * [Advice Collection](http://www.csc.ncsu.edu/faculty/xie/advice.htm) written by Tao Xie and Yuan Xie
+ * [Advice Collection](http://taoxie.cs.illinois.edu/advice.htm) written by Tao Xie and Yuan Xie
  * [Collected Advice on Research and Writing](http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mleone/web/how-to.html) written by Mark Leone
  * [Writing Technical Articles](http://www.cs.columbia.edu/~hgs/etc/writing-style.html) written by Henning Schulzrinne
  * [So long, and thanks for the Ph.D.! "A graduate school survival guide"](http://www.cs.unc.edu/~azuma/hitch4.html) written by Ronald T. Azuma
- * [How to Succeed in Graduate School "A Guide for Students and Advisors"](http://www.acm.org/crossroads/xrds1-3/advice2.html) written by Marie des Jardins
- * [Using Commas from Purdue University Online Writing Lab](http://owl.english.purdue.edu/handouts/grammar/g_comma.html), [How to Use English Punctuation Correctly](http://www.wikihow.com/Use-English-Punctuation-Correctly), [Komma in Aufzählungen](http://www.ego4u.de/de/cram-up/writing/comma?08)
- * [Genitive Basics](http://www.smic.be/smic5022/genitive.htm) and [Advanced Genitive Rules](http://www.smic.be/smic5022/Genitive2.htm)
+ * [How to Succeed in Graduate School "A Guide for Students and Advisors"](https://www.csee.umbc.edu/~mariedj/papers/advice.pdf) written by Marie des Jardins
+ * [Using Commas from Purdue University Online Writing Lab](https://owl.english.purdue.edu/owl/resource/607/01/), [How to Use English Punctuation Correctly](https://www.wikihow.com/Use-English-Punctuation-Correctly), [Komma in Aufzählungen](https://www.ego4u.de/de/cram-up/writing/comma?08)
  * [Wissenschaftliches Schreiben: Aufbau](https://sdqweb.ipd.kit.edu/wiki/Wissenschaftliches_Schreiben/Aufbau) a Wiki (in Germany only) maintained by KIT.
