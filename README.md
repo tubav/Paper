@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Thesis/Paper.svg?branch=master)](https://travis-ci.org/Thesis/Paper)
+[![Build Status](https://travis-ci.org/tubav/Paper.svg?branch=master)](https://travis-ci.org/tubav/Paper)
 
 # Sophisticated LaTeX Paper Template
 
@@ -84,7 +84,7 @@ texliveonfly template
 
 * Work with the paper
 ```
-git clone --recursive git://github.com/Thesis/Paper.git && cd Paper && make
+git clone --recursive git://github.com/tubav/Paper.git && cd Paper && make
 ```
 
 * Create a new paper
@@ -101,7 +101,7 @@ pdflatex template && pdflatex template && biber template && pdflatex template &&
 
 
 * Create a paper at overleaf.com
-  * Create new ZIP file: ```git clone --recursive git://github.com/Thesis/Paper.git && zip -r Paper.zip Paper/```
+  * Create new ZIP file: ```git clone --recursive git://github.com/tubav/Paper.git && zip -r Paper.zip Paper/```
   * Open https://www.overleaf.com/dash and upload ```Paper.zip```
   * Open project and define ```template.tex``` as main file (should work)
   * Clone project via git
@@ -124,7 +124,7 @@ Feel free to fork, push enhancements and create error reports and feature reques
  Checkout the repository as stated in the command above.
  Or run ```make``` once without any parameters.
  Or run ```	@git submodule update --init --recursive```.
- Or run ```git clone https://github.com/Thesis/Core.git lib```.
+ Or run ```git clone https://github.com/tubav/Core.git lib```.
 
 ## References
 
