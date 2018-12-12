@@ -32,7 +32,19 @@ install:
   #- export PATH=$PATH:.
 
 script:
-  - make all || cat build.sh.log
+  - make clean
+  - make update
+  - make quick
+  - make bib
+  - make full
+  - echo "testme"|make rename
+  - make quick
+  - file testme.pdf
+  - make llncs
+  - make quick
+  - make ieee
+  - make quick
+  - cat build.sh.log
 
 notifications:
   email:
