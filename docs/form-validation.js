@@ -20,10 +20,10 @@
     var evaluation=$('#evaluation').val()
     var outlook=$('#outlook').val()
 
-    $("#result-content").append("git clone https://github.com/tubav/Paper.git\n")
-    $("#result-content").append("cd Paper\n")
-    $("#result-content").append("make\n")
-    $("#result-content").append("./lib/fillTemplate.py")
+    $("#result-content").append("$ git clone https://github.com/tubav/Paper.git\n")
+    $("#result-content").append("$ cd Paper\n")
+    $("#result-content").append("$ make\n")
+    $("#result-content").append("$ ./lib/fillTemplate.py")
     $("#result-content").append(` --first "${first}"`)
     $("#result-content").append(` --last "${last}"`)
     $("#result-content").append(` --mail "${mail}"`)
@@ -39,6 +39,8 @@
     $("#result-content").append(` --result "${result}"`)
     $("#result-content").append(` --evaluation "${evaluation}"`)
     $("#result-content").append(` --outlook "${outlook}"`)
+    $("#result-content").append("\n")
+    $("#result-content").append("$ make quick open")
     $("#result-box").show()        
     $("#question-box").hide()
   }
