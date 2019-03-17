@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Paper Generator</title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <i class="fas fa-toilet-paper fa-4x"></i>
+    <h1>Paper Generator</h1>
+    <p class="lead">Please fill out the forms below by responding with a single sentence per question.</p>
+    <p class="lead"><a href="#" id="dummy">Click here</a> to fill out the fields with the placeholder text for testing purposes.</p>
+  </div>
+
+  <div class="row" id="result-box">
+    <div class="col-md-12 order-md-1">
+      <h2>Result</h2>
+      <p>Run the following code:</p>
+      <div class="alert alert-success" role="alert" id="result-content"></div>
+    </div>
+  </div>
+  
+  <div class="row" id="question-box">
+    <div class="col-md-12 order-md-1">
+      <h4 class="mb-3">Author</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" id="first" placeholder="Alexander" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" id="last" placeholder="Willner" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted"></span></label>
+          <input type="text" class="form-control" id="mail" placeholder="alexander.willner@tu-berlin.de" required>
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Institution</label>
+          <input type="text" class="form-control" id="institution" placeholder="Technical University Berlin" required>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Country</label>
+            <input type="text" class="form-control" id="country" placeholder="Germany" required>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">City</label>
+            <input type="text" class="form-control" id="city" placeholder="Berlin" required>
+            <div class="invalid-feedback">
+              City required.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Zip</label>
+            <input type="text" class="form-control" id="zip" placeholder="10587" required>
+            <div class="invalid-feedback">
+              Zip code required.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Content</h4>
+
+        <div class="d-block my-3">
+          <div class="custom-control custom-radio">
+            <input id="paper" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+            <label class="custom-control-label" for="paper">Paper</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="expose" name="paymentMethod" type="radio" class="custom-control-input" required disabled>
+            <label class="custom-control-label" for="expose">Thesis Exposé</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="thesis" name="paymentMethod" type="radio" class="custom-control-input" required disabled>
+            <label class="custom-control-label" for="thesis">Thesis</label>
+          </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="The Edge Computing Paradigm for Smart Manufacturing" required>
+            <small class="text-muted">What is the core summary of the paper?</small>
+            <div class="invalid-feedback">
+              Title required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Context</label>
+            <input type="text" class="form-control" id="context" placeholder="The digital transformation in industrial domains can contribute to ecologically sound, economically successful and socially balanced world." required>
+            <small class="text-muted">What is problem area, why is it interesting?</small>
+            <div class="invalid-feedback">
+              Context required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Problem</label>
+            <input type="text" class="form-control" id="problem" placeholder="Within the manufacturing context, however, challengingly requirements have to be met when applying modern information and communication technologies." required>
+            <small class="text-muted">What is problem we specifically consider, why is it hard (e.g., why do naive approaches fail?)</small>
+            <div class="invalid-feedback">
+              Problem required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Related Work</label>
+            <input type="text" class="form-control" id="work" placeholder="Under the umbrella of the term Industry 4.0 a number of approaches are currently being discussed that often involve the use of centralized Cloud Computing components." required>
+            <small class="text-muted">Survey past relevant work. Why hasn’t it been solved before? Or, what’s wrong with previous proposed solutions?</small>
+            <div class="invalid-feedback">
+              Related Work required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Own Approach</label>
+            <input type="text" class="form-control" id="approach" placeholder="In this paper, we discuss how the Edge Computing paradigm can address the specific challenges and augment Cloud Computing approaches." required>
+            <small class="text-muted">What are the key components of this approach and how does it differ to related work?</small>
+            <div class="invalid-feedback">
+              Approach required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Result</label>
+            <input type="text" class="form-control" id="result" placeholder="The core contribution is to provide an overview of related standards, initiatives and future engineering issues." required>
+            <small class="text-muted">What is the expected/generated scientific surplus value?</small>
+            <div class="invalid-feedback">
+              Result required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Evaluation</label>
+            <input type="text" class="form-control" id="evaluation" placeholder="The results have been validated by interviews with domain experts." required>
+            <small class="text-muted">How will/have we validate(d) the results?</small>
+            <div class="invalid-feedback">
+              Evaluation required
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-name">Outlook</label>
+            <input type="text" class="form-control" id="outlook" placeholder="Based on this work, a reference architecture model for Edge Computing could be developed to identify open research and engineering questions." required>
+            <small class="text-muted">How could this work be extended?</small>
+            <div class="invalid-feedback">
+              Outlook required
+            </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit" id="get-button">Get Result</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2019 Alexander Willner</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="https://github.com/AlexanderWillner/PaperGenerator">Support</a></li>
+    </ul>
+  </footer>
+</div>
+<script src="./assets/js/vendor/jquery-slim.min.js"</script>
+<script src="./js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script src="./form-validation.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+.container {
+  max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+
+#result-box {
+  display:none;
+  margin-top:1em;
+  white-space: pre-line;
+}
