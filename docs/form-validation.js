@@ -4,23 +4,24 @@
 
   function showResult() {
 	var result = {
-		    first: $('#first').val().replace(/"/g, '\\"'),
-		    last: $('#last').val().replace(/"/g, '\\"'),
-		    mail: $('#mail').val().replace(/"/g, '\\"'),
-		    institution: $('#institution').val().replace(/"/g, '\\"'),
-		    country: $('#country').val().replace(/"/g, '\\"'),
-		    city: $('#city').val().replace(/"/g, '\\"'),
-		    zip: $('#zip').val().replace(/"/g, '\\"'),
-		    type: $('#type').val().replace(/"/g, '\\"'),
-		    title: $('#title').val().replace(/"/g, '\\"'),
-		    context: $('#context').val().replace(/"/g, '\\"'),
-		    problem: $('#problem').val().replace(/"/g, '\\"'),
-		    work: $('#work').val().replace(/"/g, '\\"'),
-		    approach: $('#approach').val().replace(/"/g, '\\"'),
-		    result: $('#result').val().replace(/"/g, '\\"'),
-		    evaluation: $('#evaluation').val().replace(/"/g, '\\"'),
-		    outlook: $('#outlook').val().replace(/"/g, '\\"')
+		    first: $('#first').val(),
+		    last: $('#last').val(),
+		    mail: $('#mail').val(),
+		    institution: $('#institution').val(),
+		    country: $('#country').val(),
+		    city: $('#city').val(),
+		    zip: $('#zip').val(),
+		    type: $('#type').val(),
+		    title: $('#title').val(),
+		    context: $('#context').val(),
+		    problem: $('#problem').val(),
+		    work: $('#work').val(),
+		    approach: $('#approach').val(),
+		    result: $('#result').val(),
+		    evaluation: $('#evaluation'),
+		    outlook: $('#outlook').val()
     };
+    //todo: iterate over result and escape double quotes
     $("#result-content").append("$ git clone https://github.com/tubav/Paper.git\n")
     $("#result-content").append("$ cd Paper\n")
     $("#result-content").append("$ make\n")
