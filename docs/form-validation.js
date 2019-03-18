@@ -3,66 +3,68 @@
   'use strict'
 
   function showResult() {
-    var first=$('#first').val()
-    var last=$('#last').val()
-    var mail=$('#mail').val()
-    var institution=$('#institution').val()
-    var country=$('#country').val()
-    var city=$('#city').val()
-    var zip=$('#zip').val()
-    var type=$('#type').val()
-    var title=$('#title').val()
-    var context=$('#context').val()
-    var problem=$('#problem').val()
-    var work=$('#work').val()
-    var approach=$('#approach').val()
-    var result=$('#result').val()
-    var evaluation=$('#evaluation').val()
-    var outlook=$('#outlook').val()
-
+	var result = {
+		    first: $('#first').val(),
+		    last: $('#last').val(),
+		    mail: $('#mail').val(),
+		    institution: $('#institution').val(),
+		    country: $('#country').val(),
+		    city: $('#city').val(),
+		    zip: $('#zip').val(),
+		    type: $('#type').val(),
+		    title: $('#title').val(),
+		    context: $('#context').val(),
+		    problem: $('#problem').val(),
+		    work: $('#work').val(),
+		    approach: $('#approach').val(),
+		    result: $('#result').val(),
+		    evaluation: $('#evaluation').val(),
+		    outlook: $('#outlook').val()
+    };
     $("#result-content").append("$ git clone https://github.com/tubav/Paper.git\n")
     $("#result-content").append("$ cd Paper\n")
     $("#result-content").append("$ make\n")
     $("#result-content").append("$ ./lib/fillTemplate.py")
-    $("#result-content").append(` --first "${first}"`)
-    $("#result-content").append(` --last "${last}"`)
-    $("#result-content").append(` --mail "${mail}"`)
-    $("#result-content").append(` --institution "${institution}"`)
-    $("#result-content").append(` --country "${country}"`)
-    $("#result-content").append(` --city "${city}"`)
-    $("#result-content").append(` --zip "${zip}"`)
-    $("#result-content").append(` --title "${title}"`)
-    $("#result-content").append(` --context "${context}"`)
-    $("#result-content").append(` --problem "${problem}"`)
-    $("#result-content").append(` --work "${work}"`)
-    $("#result-content").append(` --approach "${approach}"`)
-    $("#result-content").append(` --result "${result}"`)
-    $("#result-content").append(` --evaluation "${evaluation}"`)
-    $("#result-content").append(` --outlook "${outlook}"`)
+    $("#result-content").append(` --first "${result.first}"`)
+    $("#result-content").append(` --last "${result.last}"`)
+    $("#result-content").append(` --mail "${result.mail}"`)
+    $("#result-content").append(` --institution "${result.institution}"`)
+    $("#result-content").append(` --country "${result.country}"`)
+    $("#result-content").append(` --city "${result.city}"`)
+    $("#result-content").append(` --zip "${result.zip}"`)
+    $("#result-content").append(` --title "${result.title}"`)
+    $("#result-content").append(` --context "${result.context}"`)
+    $("#result-content").append(` --problem "${result.problem}"`)
+    $("#result-content").append(` --work "${result.work}"`)
+    $("#result-content").append(` --approach "${result.approach}"`)
+    $("#result-content").append(` --result "${result.result}"`)
+    $("#result-content").append(` --evaluation "${result.evaluation}"`)
+    $("#result-content").append(` --outlook "${result.outlook}"`)
     $("#result-content").append("\n")
     $("#result-content").append("$ make quick open")
     $("#result-box").show()        
-    $("#question-box").hide()
+    $("#question-box").hide()        
+    $("#get-button").hide()
+    $('#zip-button').show()
   }
   
   window.addEventListener('load', function () {
     // testing: fill out all forms fields
     $('#dummy').on('click', function() {
 	    Array.prototype.forEach.call($(':text'), function(e) {e.value = e.placeholder});	
-    })
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    })    
     var forms = document.getElementsByClassName('needs-validation')
-    
-    // Loop over them and prevent submission
     Array.prototype.filter.call(forms, function (form) {
-      form.addEventListener('submit', function (event) {
+      form.addEventListener('submit', function listener(event) {
         if (form.checkValidity() === false) {
           event.preventDefault()
           event.stopPropagation()
         } else {
-          event.preventDefault()
-          showResult()
+	      if (! $('#zip-button').is(":visible")) {
+              event.preventDefault()
+		      event.stopPropagation()
+		      showResult()
+	      }
         }
         form.classList.add('was-validated')
       }, false)

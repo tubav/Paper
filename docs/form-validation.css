@@ -4,7 +4,7 @@
 
 .lh-condensed { line-height: 1.25; }
 
-#result-box {
+#result-box, #zip-button {
   display:none;
   margin-top:1em;
   white-space: pre-line;
