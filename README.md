@@ -2,9 +2,11 @@
 
 # Sophisticated LaTeX Paper Template
 
+## Executive Summary
+
+Open [http://tubav.github.io/Paper](http://tubav.github.io/Paper) to download a generated LaTeX template.
 
 ## Abstract
-
 
 During their studies most PhD students will be faced to the situation to
 write a paper or other publications. Fortunately, one can find many hints,
