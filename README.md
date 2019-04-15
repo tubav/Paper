@@ -116,7 +116,7 @@ Feel free to fork, push enhancements and create error reports and feature reques
 
 ### I've an issue generating the bibliography
  * Symptom: ```read_file '/var/XXX/cache-XXX/inc/lib/Biber/LaTeX/recode_data.xml' - sysopen: No such file or directory at /var/XXX/cache-XXX/bda77484.pm line 112.```
- * Cause: Weired biber bug
+ * Cause: Weird biber bug
  * Solution: Run ```rm -rf $(biber --cache)```
 
 ### I've an issue with the make command or compiling not finding a file
