@@ -88,36 +88,22 @@
 \typeout{warning: your acro package is too old (<2.0)}
 }%
 \makeatother
-\ifnewacro% show footnotes only once
-    \ExplSyntaxOn%
-    \RenewAcroCommand\ac%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_use:n {#1}
-      }
-    \RenewAcroCommand\Ac%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_first_upper:
-        \acro_use:n {#1}
-      }
-    \NewAcroCommand\aclu%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_long:n {#1}
-      }
-    \NewAcroCommand\Aclu%
-      {
-        \acro_if_acronym_used:nF {#1}
-          { \acrousefootnotetrue\acro_cite: }
-        \acro_first_upper:
-        \acro_long:n {#1}
-      }
+\ifnewacro
+  \ExplSyntaxOn%
+  % special acronyms:
+  \NewAcroCommand \aclu {
+    \acro_is_used:nF {#1}
+      { \acro_cite: }
+    \acro_long:n {#1}
+  }
+  \NewAcroCommand \Aclu {
+    \acro_is_used:nF {#1}
+      { \acro_cite: }
+    \acro_first_upper:
+    \acro_long:n {#1}
+  }
 	% genitive: 
-    \ProvideAcroEnding{genitive}{}{s} 
+  \ProvideAcroEnding{genitive}{}{s} 
 	\NewAcroCommand \acg { 
 	  \acro_genitive: 
 	  \acro_use:n {#1} 
