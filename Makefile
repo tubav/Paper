@@ -7,6 +7,19 @@ fixme:
 
 .PHONY: html
 
+git-diff:
+	@echo "TODO: move to library"
+ifeq (, $(shell which latexpand))
+	tlmgr install latexpand
+endif
+ifeq (, $(shell which latexdiff))
+	tlmgr install latexdiff
+endif
+ifeq (, $(shell which git-latexdiff))
+	$(error "No git-latexdiff in $(PATH), you need to install it first")
+endif
+	git-latexdiff --main template.tex --biber --run-biber -v HEAD --
+
 html:
 	@echo "TODO: move to library"
 	@echo "TODO: fix issues with subfigures"
