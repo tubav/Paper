@@ -30,9 +30,13 @@
 \makeatother
 
 %to avoid warnings with llncs + tocstyle ("dottedtocline" issue)
-%\dontusepackage[tocindentauto]{tocstyle}
-%\newcommand{\usetocstyle}[1]{}
-%\newcommand{\settocstylefeature}[2]{}
+\dontusepackage[tocindentauto]{tocstyle}
+\newcommand{\usetocstyle}[1]{}
+\newcommand{\settocstylefeature}[2]{}
+
+%to avoid warnings with caption and unknown document classes
+\usepackage{silence}
+\WarningFilter{caption}{Unknown document class}
 % ------------------------------------------------------------------------------
 
 % basic config -----------------------------------------------------------------
@@ -94,6 +98,9 @@
 \makeatletter
 \@ifpackageloaded{tex4ht}{\usepackage[tex4ht]{hyperref}}{
 \usepackage[pdftex,                   % Hyperlinks in PDFs
+pdfa=true,                            % PDF/A compatbility (fix hyperlink with ghostscript)
+pdfapart=1,                           % PDF/A compatbility
+unicode=true,                         % PDF/A compatbility
 raiselinks=true,			          % calculate real height of the link
 breaklinks,                           % break links
 %backref=page,                         % backlinks in bibliography (section, slide, page, none)
@@ -120,6 +127,7 @@ hypertexnames=true,                   % Whatever ;)
 pdfencoding=auto,
 %draft,                                % Disable hyperlinks for IEEEtran / EDAS
 ]{hyperref}                           % Use hyperlinks
+\usepackage{bookmark}                 % Manually add PDF bookmarks
 \hypersetup{keeppdfinfo}              % fix for hyperxmp, however, breaks PDF/A compliance
 %\renewcommand*{\backref}[1]{[cited at page #1]} % Show formatted backlinks
 %\renewcommand{\url}[1]{#1}           % Disable hyperlinks for IEEEtran / EDAS
