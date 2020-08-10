@@ -5,7 +5,7 @@ fixme:
 	@echo "Fixing it for you..."
 	@git submodule update --init --recursive || git clone https://github.com/tubav/Core.git lib
 
-.PHONY: html
+.PHONY: html arxiv
 
 git-diff:
 	@echo "TODO: move to library"
@@ -19,6 +19,10 @@ ifeq (, $(shell which git-latexdiff))
 	$(error "No git-latexdiff in $(PATH), you need to install it first")
 endif
 	git-latexdiff --main template.tex --biber --run-biber -v HEAD --
+
+arxiv:
+	@type arxiv-collector >/dev/null 2>&1 || (echo "Run 'pip3 install arxiv-collector' first." >&2 ; exit 1)
+	arxiv-collector template.tex
 
 html:
 	@echo "TODO: move to library"
