@@ -14,15 +14,12 @@ addons:
       - texlive-humanities
       - texlive-science
       - texlive-pictures
-      - latex-xcolor
-      - pgf
       - aspell
       - gnuplot
       - r-base
       - graphviz
       - fonts-sil-gentium
       - fonts-inconsolata
-      - fonts-droid
       - fonts-sil-gentium-basic
 install:
   - sudo apt-get -y install fonts-sil-gentium fonts-inconsolata fonts-droid fonts-sil-gentium-basic cm-super biber texlive-lang-german texlive-full
