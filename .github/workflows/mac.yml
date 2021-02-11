@@ -1,0 +1,37 @@
+name: Mac
+on: [push, pull_request]
+defaults:
+  run:
+    shell: bash
+jobs:
+  test:
+    runs-on: macos-11.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup
+        run: |
+          ls -la
+          ls -la lib
+      - name: Init
+        run: |
+          git clone https://github.com/tubav/Core.git lib
+          make deps-mac
+      - name: Debug
+        run: |
+          make debug
+      - name: Test
+        run: |
+          make quick
+          make bib
+          make all
+          echo "testme"|make rename
+          make quick
+          file testme.pdf
+          make llncs
+          make quick
+          make ieee
+          make quick
+      - name: Show Log
+        run: cat build.sh.log
+        if: always()

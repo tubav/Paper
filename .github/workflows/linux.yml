@@ -1,4 +1,4 @@
-name: LaTeX Paper Github Action
+name: Linux
 on: [push, pull_request]
 defaults:
   run:
