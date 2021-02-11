@@ -22,6 +22,7 @@ dist: focal
 #     #   - fonts-inconsolata
 #     #   - fonts-sil-gentium-basic
 install:
+  - sudo apt update
   - sudo apt -y install biber xindy texlive-base texlive-extra-utils texlive-latex-extra texlive-science
   - sudo apt -y install make aspell graphviz gnuplot r-base plantuml
   #- sudo apt -y install fonts-sil-gentium fonts-inconsolata fonts-sil-gentium-basic cm-super biber texlive-lang-german texlive-full plantuml
