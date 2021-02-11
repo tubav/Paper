@@ -1,5 +1,8 @@
-name: Mac
-on: [push, pull_request]
+name: macOS
+on:
+  push:
+    branches-ignore:
+      - '**'
 defaults:
   run:
     shell: bash
