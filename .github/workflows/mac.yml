@@ -24,6 +24,8 @@ jobs:
           make debug
       - name: Test
         run: |
+          export PATH="/Library/TeX/texbin/:$PATH"
+          eval "$(/usr/libexec/path_helper)"
           make quick
           make bib
           make all
