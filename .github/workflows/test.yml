@@ -3,13 +3,17 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    container: ubuntu:rolling
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Setup
         run: |
           sudo apt update
-          sudo apt -y install make
+          sudo apt -y install make git
       - name: Init
         run: |
+          git clone 
           make update
           make deps-lin
       - name: Debug
