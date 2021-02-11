@@ -1,7 +1,7 @@
 # Sophisticated LaTeX Paper Template
 
-[![Build Status](https://travis-ci.org/tubav/Paper.svg?branch=master)](https://travis-ci.org/tubav/Paper)
 [![Build Status](https://github.com/tubav/Paper/workflows/linux/badge.svg)](https://github.com/tubav/Paper/actions)
+[![Build Status](https://github.com/tubav/Paper/workflows/macOS/badge.svg)](https://github.com/tubav/Paper/actions)
 
 ## Executive Summary
 
