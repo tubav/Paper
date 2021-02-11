@@ -60,12 +60,8 @@ instructions and is basically following the article [Tipps zum Schreiben von Kon
 ### Ubuntu
 
 ```bash
-sudo apt-get -y install git fonts-sil-gentium fonts-sil-gentium-basic texlive-fonts-extra fonts-inconsolata texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-humanities texlive-science cm-super aspell gnuplot r-base graphviz
-sudo add-apt-repository -y ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get -y install oracle-java7-installer
-wget http://yar.fruct.org/attachments/download/362/plantuml_7707-1_all.deb
-sudo dpkg -i plantuml_7707-1_all.deb
+# Installs all TexLive packages and tools (aspell graphviz gnuplot r-base plantuml)
+make deps-lin
 ```
 
 ### macOS
@@ -73,9 +69,8 @@ sudo dpkg -i plantuml_7707-1_all.deb
 #### Full installation (5.5 GB)
 
 ```bash
-brew cask install mactex
-brew tap homebrew/science
-brew install plantuml graphviz gnuplot r aspell --with-lang-de
+# Installs complete TexLive and tools (aspell graphviz gnuplot r-base plantuml)
+make deps-mac
 ```
 
 #### Minimal installation (400 MB)
