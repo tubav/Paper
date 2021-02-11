@@ -1,0 +1,30 @@
+name: LaTeX Paper Github Action
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup
+        run: |
+          sudo apt update
+          sudo apt -y install make
+      - name: Init
+        run: |
+          make update
+          make deps-lin
+      - name: Debug
+        run: |
+          make debug
+      - name: Test
+        run: |
+          make quick
+          make bib
+          make all
+          echo "testme"|make rename
+          make quick
+          file testme.pdf
+          make llncs
+          make quick
+          make ieee
+          make quick
+          cat build.sh.log
