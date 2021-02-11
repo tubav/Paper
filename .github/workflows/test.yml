@@ -36,4 +36,6 @@ jobs:
           make quick
           make ieee
           make quick
-          cat build.sh.log
+      - name: Show Log
+        run: cat build.sh.log
+        if: always()
