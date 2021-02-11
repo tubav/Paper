@@ -10,15 +10,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          submodules: true
       - name: Setup
         run: |
-          ls -l
+          ls -la
+          ls -la lib
           apt update && apt install sudo
           sudo apt update
           sudo apt -y install make git
       - name: Init
         run: |
-          make
           make update
           make deps-lin
       - name: Debug
