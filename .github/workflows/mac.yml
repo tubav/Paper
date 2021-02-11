@@ -16,7 +16,7 @@ jobs:
       - name: Init
         run: |
           git clone https://github.com/tubav/Core.git lib
-          make deps-mac
+          make deps-mac || sudo tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
           eval "$(/usr/libexec/path_helper)"
       - name: Debug
         run: |
