@@ -20,7 +20,7 @@ jobs:
       - name: Init
         run: |
           git clone https://github.com/tubav/Core.git lib
-          make deps-lin
+          DEBIAN_FRONTEND=noninteractive make deps-lin
       - name: Debug
         run: |
           make debug
