@@ -18,6 +18,7 @@ jobs:
           git clone https://github.com/tubav/Core.git lib
           brew install mactex plantuml graphviz gnuplot aspell r
           eval "$(/usr/libexec/path_helper)"
+          sudo tlmgr update --self
           sudo tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
       - name: Debug
         run: |
