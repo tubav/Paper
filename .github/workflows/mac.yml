@@ -22,9 +22,11 @@ jobs:
           sudo tlmgr install texliveonfly glossaries biber collection-fontsrecommended IEEEtran xindy
       - name: Debug
         run: |
+          eval "$(/usr/libexec/path_helper)"
           make debug
       - name: Test
         run: |
+          eval "$(/usr/libexec/path_helper)"
           make quick
           make bib
           make all
