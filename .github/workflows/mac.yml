@@ -16,16 +16,14 @@ jobs:
       - name: Init
         run: |
           git clone https://github.com/tubav/Core.git lib
-          make deps-mac || sudo tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
-          eval "$(/usr/libexec/path_helper)"
+          brew install mactex plantuml graphviz gnuplot aspell r
+	        eval "$(/usr/libexec/path_helper)"
+          sudo tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
       - name: Debug
         run: |
-          eval "$(/usr/libexec/path_helper)"
           make debug
       - name: Test
         run: |
-          export PATH="/Library/TeX/texbin/:$PATH"
-          eval "$(/usr/libexec/path_helper)"
           make quick
           make bib
           make all
