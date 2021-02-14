@@ -4,6 +4,7 @@ install:
   - sudo apt update
   - sudo apt -y install make
   - make deps-lin
+  - tlmgr init-usertree
   - tlmgr update --self
   - tlmgr update --all
 
