@@ -3,9 +3,11 @@ dist: focal
 install:
   - sudo apt update
   - sudo apt -y install make
+  - make deps-lin
+  - tlmgr update --self
+  - tlmgr update --all
 
 script:
-  - make deps-lin
   - make clean
   - make update
   - make debug
