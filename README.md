@@ -78,7 +78,7 @@ make deps-mac
 ```bash
 brew cask install basictex
 tlmgr install texliveonfly biber collection-fontsrecommended IEEEtran xindy
-texliveonfly template
+make deps
 ```
 
 ## Getting Started
